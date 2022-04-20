@@ -31,14 +31,16 @@ h2 {
   position: absolute;
   margin: 0;
   color: white;
-  animation: rotations 3s infinite;
+  animation: rotations 3s ease infinite;
 }
 
-#collisionCounter {
-  text-align: center;
-  position: absolute;
-  color: red;
+h3 {
   margin: 0;
+  font-size: 25px;
+  position: absolute;
+  color: white;
+  margin-top: 250px;
+  width: 200px;
 }
 
 @keyframes rotations {
@@ -65,5 +67,8 @@ h2 {
   75% {
     font-size: 60px;
     color: violet;
+  }
+  90% {
+    color: red;
   }
 }

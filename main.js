@@ -8,6 +8,9 @@ const height = canvas.height = window.innerHeight;
 let img = new Image();
 img.src = 'https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Flag_of_Brazil.svg/1200px-Flag_of_Brazil.svg.png';
 // img.src = 'http://assets.stickpng.com/images/580b57fcd9996e24bc43c301.png';
+let bgrImg = new Image();
+bgrImg.src = "https://i.ytimg.com/vi/K8NKNKub2HI/maxresdefault.jpg"
+// https://upload.wikimedia.org/wikipedia/commons/7/7a/Partial_view_of_Bras%C3%ADlia%2C_Brazil.jpg
 
 // function to generate random number
 
@@ -29,7 +32,7 @@ Ball.prototype.draw = function() {
   ctx.beginPath();
   // ctx.fillStyle = this.color;
   ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
-  ctx.fill();
+  // ctx.fill();
   ctx.drawImage(img, this.x, this.y, 100, 100);
   };
  
@@ -62,9 +65,8 @@ Ball.prototype.collisionDetect = function() {
       const distance = Math.sqrt(dx * dx + dy * dy);
 
       if (distance < this.size + balls[j].size) {
-        balls[j].color = this.color = 'rgb(' + random(0, 255) + ',' + random(0, 255) + ',' + random(0, 255) +')';
-        // window.open("https://www.bbc.com/news/live/world-europe-61136997");
-        prompt("A fatal error has occured");
+        // balls[j].color = this.color = 'rgb(' + random(0, 255) + ',' + random(0, 255) + ',' + random(0, 255) +')';
+        alert("GOOOOOOOOAAAAAAAAAAALLLLLLL!!!!!!!!!!!!!!!!!!");
       }
     }
   }
@@ -89,8 +91,9 @@ while (balls.length < 10) {
 }
 
 function loop() {
-  ctx.fillStyle = 'rgba(0, 0, 0, 0.25)';
-  ctx.fillRect(0, 0, width, height);
+  ctx.fillStyle = 'rgba(0, 0, 0, 1)';
+  // ctx.fillRect(0, 0, width, height);
+  ctx.drawImage(bgrImg, 0, 0, width, height);
 
   for (let i = 0; i < balls.length; i++) {
     balls[i].draw();
